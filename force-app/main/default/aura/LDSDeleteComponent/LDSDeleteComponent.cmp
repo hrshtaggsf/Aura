@@ -3,7 +3,7 @@
     <aura:attribute name="record" type="Object"/>
     <aura:attribute name="recordFields" type="Object"/>
     <aura:attribute name="recordError" type="String"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
 
     <div>
         <force:recordData aura:id="recordCreator"
@@ -20,9 +20,9 @@
     <div class="Create Beer Record">
         <lightning:card iconName="action:new_contact" title="Create Beer">
             <div class="slds-p-horizontal--small">
-                <lightning:input aura:id="beerField" label="First Name" value="{!v.recordFields.Name}"/>
+                {!v.recordFields.ID}
                 <br/>
-                <lightning:button label="Save Beer" variant="brand" onclick="{!c.handleSaveContact}"/>
+               
                  <lightning:button label="Delete Beer" variant="brand" onclick="{!c.handleDeleteContact}"/>
             </div>
         </lightning:card>
