@@ -1,0 +1,20 @@
+<!--
+  @File Name          : ParentComponent.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/4/2020, 9:24:53 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component>
+  <c:ChildComponent aura:Id="childCmp" onclick="{! c.handleclick}"/>
+  <lightning:button
+    variant="brand"
+    label="invokeChildAction"
+    title="invokeChildAction"
+    onclick="{! c.doclick }"
+  />
+</aura:component>

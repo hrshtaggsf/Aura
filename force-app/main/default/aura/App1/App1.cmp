@@ -1,0 +1,29 @@
+<!--
+  @File Name          : App1.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/4/2020, 7:49:08 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component  access="Global" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"  >
+    <aura:attribute name="truthy" type="Boolean" default="False" />
+    <aura:attribute name="colorList" type="List" default="['red','blue','purple']" />
+    <aura:attribute name="mapVar" type="List" default=" " />
+    <aura:if isTrue="{!v.truthy}">
+        ifBody
+        <aura:set attribute="else">
+            elseBody
+        </aura:set>
+    </aura:if>
+    <aura:iteration items="{!v.colorList}" var="item">
+        {!item}
+    </aura:iteration>
+    <lightning:button variant="base" label="Button" title="Title of button" onclick="{! c.mapClick }"/>
+    <aura:iteration items="{!v.mapVar}" var="map">
+        key--- {!map.key} and Value --- {!map.value}  <br/>
+    </aura:iteration>
+</aura:component>

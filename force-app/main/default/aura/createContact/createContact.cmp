@@ -1,0 +1,31 @@
+<!--
+  @File Name          : createContact.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 6/4/2020, 8:06:53 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component controller="CntctOut">
+    <aura:attribute name="accountId" type="String" default=" " />
+    <aura:attribute name="createContact" type="Contact" default="{
+        sobjectName : 'Contact',
+        FirstName : '',
+        LastName : '',
+        Email : '',
+        Phone : ''
+    }" />
+    <aura:registerEvent name = "ContactEVT" type="c:QuickContactEvent"/>
+   
+    <lightning:input type="Text" name="FirstName" label="FirstName" value="{!v.createContact.FirstName}" />
+    <lightning:input type="Text" name="LastName" label="LastName" value="{!v.createContact.LastName}" />
+    <lightning:input type="Email" name="Email" label="Email" value="{!v.createContact.Email}" />
+    <lightning:input type="Phone" name="Phone" label="Phone" value="{!v.createContact.Phone}" />
+
+    <lightning:button variant="brand" label="Create Contact" title="Create Contact" onclick="{!c.doCreateContact}" />
+    <lightning:button label="View Details" title="title" variant="brand" onclick="{!c.doCreateContact}" />
+   
+</aura:component>

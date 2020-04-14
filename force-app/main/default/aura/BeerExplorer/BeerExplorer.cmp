@@ -1,0 +1,28 @@
+<!--
+  @File Name          : BeerExplorer.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/4/2020, 12:11:06 am
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component implements="force:appHostable" controller="BeerSearchAuraService" >
+    <aura:attribute name="BeerList" type="Object" />
+    l:<aura:handler name='init' value='{!this}' action='{!c.handleCompEvent}' />
+    <aura:handler name = "BeerEvent" event = "c:SearchEvent" action='{!c.handleCompEvent}' />
+    <div>
+        <c:HeaderComponent TagLine="Beer Search" message="Order Beer" />
+
+    </div>
+    <div>
+        <c:BeerSearch />
+    </div>
+    <div>
+
+        <c:BeerListComponent recordList = "{!v.BeerList}" />
+    </div>
+    
+</aura:component>

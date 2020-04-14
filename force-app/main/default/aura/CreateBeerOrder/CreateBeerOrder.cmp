@@ -1,0 +1,24 @@
+<!--
+  @File Name          : CreateBeerOrder.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 13/4/2020, 1:31:51 am
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component implements="lightning:isUrlAddressable">
+    <div class="slds-var-p-around_small">
+    <lightning:recordForm
+      objectApiName="Beer_Order__c"
+      layoutType="Full"
+      mode="edit"
+      onsubmit="{!c.handleSubmit}"
+      onsuccess="{!c.handleSuccess}"
+      onerror ="{!c.handleError}"
+      columns="2" />
+        
+    </div>
+</aura:component>

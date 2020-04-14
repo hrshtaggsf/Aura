@@ -1,0 +1,23 @@
+<!--
+  @File Name          : ChildComponent.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 9/4/2020, 10:32:57 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component>
+    <aura:attribute name="onclick" type="Aura.Action" />
+    <aura:method name="Child" action = "{!c.doChild}" access = "Public" description = "Child Component method">
+        <aura:attribute name="param1" type="String" />
+    </aura:method> 
+    <lightning:button
+    variant="brand"
+    label="invokeParentAction"
+    value="invokeParentAction"
+    onclick="{! v.onclick}"
+  />
+</aura:component>
