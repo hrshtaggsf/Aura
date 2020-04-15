@@ -11,7 +11,18 @@
                         "message": "The record was Deleted." + deleteResult.id
                     });
                     resultsToast.fire();
-                    
+                    var pageRef = component.find('navigation');
+                    var pageReferenceNav = {
+                        type: 'standard__objectPage',
+                        attributes: {
+                            objectApiName: 'Beer__c',
+                            actionName: 'list'
+                        },
+                        state: {
+                           
+                        }
+                    };
+                    pageRef.navigate(pageReferenceNav);
                 } else if (deleteResult.state === "INCOMPLETE") {
                     // handle the incomplete state
                     console.log("User is offline, device doesn't support drafts.");

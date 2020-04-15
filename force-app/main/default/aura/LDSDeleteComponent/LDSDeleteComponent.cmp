@@ -3,7 +3,7 @@
     <aura:attribute name="record" type="Object"/>
     <aura:attribute name="recordFields" type="Object"/>
     <aura:attribute name="recordError" type="String"/>
-    
+     <lightning:navigation aura:id="navigation"/>
 
     <div>
         <force:recordData aura:id="recordCreator"
@@ -18,13 +18,11 @@
       
     </div>
     <div class="Create Beer Record">
-        <lightning:card iconName="action:new_contact" title="Create Beer">
-            <div class="slds-p-horizontal--small">
-                {!v.recordFields.ID}
+      
+                {!v.recordFields.Id}
                 <br/>
                
                  <lightning:button label="Delete Beer" variant="brand" onclick="{!c.handleDeleteContact}"/>
-            </div>
-        </lightning:card>
+           
     </div>
 </aura:component>
