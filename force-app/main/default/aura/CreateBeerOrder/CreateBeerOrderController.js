@@ -30,9 +30,9 @@
         console.log('Ordered price ', quantity);
         var totalPrice = parseInt(beerRecord.Price__c)*parseInt(quantity);
         console.log(' totalPrice ', totalPrice);
-       
+        
         var isValid = helper.validateForm(component, event, helper);
-          console.log(component.get("v.Billing_Same_as_Shipping__c"));
+        console.log(component.get("v.Billing_Same_as_Shipping__c"));
         if(component.get("v.Billing_Same_as_Shipping__c")){
             component.set('v.beerOrder.Billing_Street__c', component.get('v.beerOrder.Shipping_Street__c'));
             component.set('v.beerOrder.Billing_City__c', component.get('v.beerOrder.Shipping_City__c'));
@@ -44,7 +44,7 @@
             console.log("form is invalid");
             return;
         }
-            
+        
         var userId = $A.get("$SObjectType.CurrentUser.Id");
         //alert(userId);
         component.set("v.beerOrder.Beer__c", component.get("v.beerId"));
@@ -55,10 +55,21 @@
                 var resultsToast = $A.get("e.force:showToast");
                 resultsToast.setParams({
                     "title": "Order Placed",
-                    "message": "Your Order has been successfully placed.",
+                    "message": "Your Order has been successfully placed." + saveResult.recordId,
                     "type" : "success"
                 });
                 resultsToast.fire();
+                var pageRef = component.find('navigation');
+                var pageReferenceNav = {
+                    type: 'standard__component',
+                    attributes: {
+                        componentName : 'c__OrderDetail'
+                    },
+                    state: {
+                        "c__orderId" : saveResult.recordId
+                    }
+                };
+                pageRef.navigate(pageReferenceNav);
             } else if (saveResult.state === "INCOMPLETE") {
                 console.log("User is offline, device doesn't support drafts.");
             } else if (saveResult.state === "ERROR") {

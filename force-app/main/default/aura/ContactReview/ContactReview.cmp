@@ -1,0 +1,28 @@
+<aura:component >
+    <aura:attribute name = "ContactRecord" type = "Object"/>
+    <div  class="slds-p-around_small">
+        <aura:iteration items="{!v.ContactRecord}" var="con">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-4">
+                    {!v.ContactRecord.FirstName}
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    {!v.ContactRecord.LastName}
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    {!v.ContactRecord.Email}
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    {!v.ContactRecord.Tittle} &nbsp;&nbsp;
+                    <a href = "Javascript.void(0);" onclick = "{!c.removeRecord}">
+                        Remove</a>
+                </div>
+            </div>
+            
+            
+        </aura:iteration>
+    </div>
+    
+    
+    
+</aura:component>

@@ -4,13 +4,14 @@
   @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
   @Group              : 
   @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
-  @Last Modified On   : 15/4/2020, 10:16:26 pm
+  @Last Modified On   : 18/4/2020, 5:14:52 pm
   @Modification Log   : 
   Ver       Date            Author      		    Modification
   1.0    10/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
 -->
 <aura:component implements="lightning:isUrlAddressable">
     
+    <lightning:navigation aura:id="navigation"/>
     <aura:attribute name="beerId" type="String" />
     <aura:attribute name="check" type="Boolean" />
     <!--<aura:attribute name="beerName" type="String" /> --> 

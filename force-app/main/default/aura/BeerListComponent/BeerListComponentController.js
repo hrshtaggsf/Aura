@@ -17,8 +17,7 @@
                     console.log("In SUCCESS");
                     component.find('overlayLib').showCustomModal({
                         header: "Beer Details",
-                        body: beerDetails,
-                        footer: "in footer",  	
+                        body: beerDetails,  	
                         showCloseButton: true,
                         cssClass: "mymodal",
                         

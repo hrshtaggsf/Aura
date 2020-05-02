@@ -1,0 +1,46 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                access="global" >
+    <aura:attribute name = "ContactRecord" type = "contact" default = "{
+                                                                       'sobjecttype' : 'Contact',
+                                                                       'FirstName' : '',
+                                                                       'LastName' : '',
+                                                                       'Email' : '',
+                                                                       'Tittle' : '',
+                                                                       'Phone' : ''
+                                                                       }"/>
+    <aura:registerEvent name = "CreateContacts1" type = "c:CreateContacts1" /> 
+   <div class="slds-p-around_small">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:input name="FirstName" label="FirstName" required = "True" aura:id = "newContact"
+                                       value="{!v.ContactRecord.FirstName}"/></span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:input name="LastName" label="LastName" required = "True" aura:id = "newContact"
+                                       value="{!v.ContactRecord.LastName}"/></span>
+            </div>
+            </div>
+        <div class="slds-grid slds-gutters"> 
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:input name="Email" label="Email" required = "True" aura:id = "newContact"
+                                       value="{!v.ContactRecord.Email}"/></span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:input name="Tittle" label="Tittle" required = "True" aura:id = "newContact"
+                                       value="{!v.ContactRecord.Tittle}"/></span>
+            </div>
+         </div>    <br/>
+        <div class="slds-grid slds-gutters"> 
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:input name="Phone" label="Phone" required = "True" aura:id = "newContact"
+                                       value="{!v.ContactRecord.Phone}"/></span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning:button variant="brand" label="Add to Review" title="Add to Review" 
+                                        onclick="{! c.handleReview }" /></span>
+            </div>
+        </div>
+    </div>
+    
+    
+</aura:component>
